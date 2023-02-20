@@ -8,7 +8,8 @@ board.classList.add("board")
 let nb = 1
 let parent = document.querySelector('#container');
 
-
+let clicked=0;
+let lotto_card = [];
 
     for (let i = 1; i <= 49; i++){
         const all = document.querySelector('#container');
@@ -18,55 +19,20 @@ let parent = document.querySelector('#container');
         const newbox = box.cloneNode()
         newbox.innerText = i
         newbox.style.color = "white";
-        toto.appendChild(newbox)
-        
-        /* const img = document.createElement("img")
-        img.style.width="150px"
-        img.style.height="150px"
-        img.src="img/"+i+".jpg";
-        newbox.style.position="absolute";
-        
-        toto.appendChild(img) */
+        newbox.style.margin = "3px";
+        toto.appendChild(newbox)   
 
-        /* function shuffleChildren(parent){
-        let children = parent.children
-        let i = parent.children.length, k , temp
-        while (--i > 0){
-            k = Math.floor(Math.random() * (i+1))
-            temp = children[k]
-            children[k] = children[i]
-            parent.appendChild(temp)
-            
+        newbox.addEventListener("click", function (){
+        clicked+=1;
+        if (clicked<=5) {
+          newbox.style.color = "rgb(56, 170, 215)";
+          newbox.style.border = "1px solid rgb(56, 170, 215)";
+          lotto_card+= newbox.innerText;
+          console.log(lotto_card); 
+          console.log(clicked);
         }
-        }
-        
-            shuffleChildren(all)
-            function random_bg_color() {
-            var x = Math.floor(Math.random() * 256);
-            var y = Math.floor(Math.random() * 256);
-            var z = Math.floor(Math.random() * 256);
-            var bgColor = "rgb(" + x + "," + y + "," + z + ")";
-            console.log(bgColor);
-        
-            newbox.style.backgroundColor = bgColor;
-            //document.body.style.background = bgColor;
-            }
-
-            random_bg_color(); */
-          /*           
-
-           newbox.addEventListener("click", function(){
-            if (newbox.style.display === "none") {
-                img.addEventListener("click", function(){
-                    newbox.style = 'display: block'
-                })
-                } else {
-                    newbox.style = 'display: none'
-                }
-                //console.log("Boite n°"+ i +", click !")
-                
-                //location.reload()
-            }) */
+       
+        },{once : true})
       
          
         
