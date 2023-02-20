@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(/public/image/lotto.png);
+    object-fit: cover;
+
+}
+.logo{
+    background-image: url(/public/image/loto.png);
+    object-fit: cover;
+    height: 32vh;
+    width: 1000px;
+    margin-left: 250px;
+}
+#container {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 1000px;
+    margin-left: 250px;
+    padding: 10px
+}
+
+.img{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    overflow:hidden;
+}
+
+.newDiv{
+    position: relative;
+
+}
+.box{
+    opacity: 1;
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+    background-color: /* rgb(76, 250, 99) */none;
+    color: white;
+    font-size: 1em;
+    text-align: center;
+    line-height: 50px;
+    animation: appear 1s;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.8s, color 0.8s, transform 0.8s;
+}
