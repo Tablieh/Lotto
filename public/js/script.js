@@ -53,6 +53,7 @@ for (let i = 1; i <= 49; i++) {
         const newbox = box.cloneNode();
         newbox.innerText = comparison[i].number;
         newbox.style.margin = "3px";
+        
         if (comparison[i].correct) {
           win++;
           newbox.style.color = "green";
@@ -108,7 +109,7 @@ function compareArrays(array1, array2) {
   for (let i = 0; i < array1.length; i++) {
     const index = array2.indexOf(array1[i]);
     result.push({
-      number: array1[i],
+      number: array2[i],
       correct: index !== -1,
     });
   }
